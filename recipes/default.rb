@@ -20,3 +20,24 @@ execute 'tomcat_user_add' do
   creates '/home/vagrant/.addTomcatUser'
   not_if { ::File.exist?('/home/vagrant/.addTomcatUser') }
 end
+
+# make sure that wget is installed
+package 'wget'
+
+# Download tomcat installation
+execute 'tomcat_download' do
+  command 'wget --directory-prefix=/tmp https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.29/bin/apache-tomcat-8.5.29.tar.gz'
+  not_if { ::File.exist?('/tmp/apache-tomcat-8.5.29.tar.gz') }
+end
+
+# create tomcat directory
+execute 'tomcat_directory' do
+  command 'sudo mkdir /opt/tomcat'
+  not_if { ::File.exist?('/opt/tomcat') }
+end
+
+# deploy tomcat
+execute 'tomcat_download' do
+  command 'sudo tar xvf /tmp/apache-tomcat-8.5.29.tar.gz -C /opt/tomcat --strip-components=1'
+  not_if { ::File.exist?('/opt/tomcat/logs/catalina.out') }
+end
