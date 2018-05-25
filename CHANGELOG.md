@@ -1,9 +1,14 @@
 # 2_Tomcat Cookbook Changelog
 
+# 0.4.0
+
+- Cookbook performance improvements
+
+  Add tomcat service
+
 # 0.3.0
 
 - Adjust Tomcat user and group permissions
-
 
 
 # 0.2.0

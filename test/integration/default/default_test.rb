@@ -45,6 +45,13 @@ end
     end
 end
 
+# check on the status of Tomcat service
+describe service('tomcat') do
+  it { should be_installed }
+  it { should be_enabled }
+  it { should be_running }
+end
+
 describe command('curl http://localhost:8080') do
-  its('stdout') { should match '/Tomcat/' }
+  its('stdout') { should match(/Tomcat/) }
 end
