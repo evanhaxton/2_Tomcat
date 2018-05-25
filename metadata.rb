@@ -4,7 +4,7 @@ maintainer_email 'ehaxton@gmail.com'
 license 'apachev2'
 description 'Installs/Configures a simple Tomcat application instance'
 long_description 'Installs/Configures a simple Tomcat instance'
-version '0.1.0'
+version '0.2.0'
 chef_version '>= 12.14' if respond_to?(:chef_version)
 
 # The `issues_url` points to the location where issues for this cookbook are
