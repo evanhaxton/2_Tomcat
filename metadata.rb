@@ -3,7 +3,7 @@ maintainer 'Evan Haxton'
 maintainer_email 'ehaxton@gmail.com'
 license 'apachev2'
 description 'Installs/Configures a simple Tomcat application instance'
-long_description 'Installs/Configures a simple Tomcat instance'
+long_description 'Please refer to README.md file for details'
 version '0.4.0'
 chef_version '>= 12.14' if respond_to?(:chef_version)
 
